@@ -13,6 +13,8 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 // import routes
 import { ROUTES } from './app.routes';
 import { RouterModule, Routes } from '@angular/router';
+import { NoimagePipe } from './pipes/noimage.pipe';
+import { CardsComponent } from './components/cards/cards.component';
 
 // services
 //import { SpotifyService } from './services/spotify.service';
@@ -23,7 +25,9 @@ import { RouterModule, Routes } from '@angular/router';
     HomeComponent,
     SearchComponent,
     ArtistaComponent,
-    NavbarComponent
+    NavbarComponent,
+    NoimagePipe,
+    CardsComponent
   ],
   imports: [
     BrowserModule,
