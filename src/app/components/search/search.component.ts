@@ -16,9 +16,7 @@ export class SearchComponent {
   search(term: string) {
 
     this.spotifyService.Search(term)
-      .subscribe( (data: any) => {
-          this.artists = data;
-      });
+      .subscribe( (data: any) => this.artists = data);
   }
 
 }
