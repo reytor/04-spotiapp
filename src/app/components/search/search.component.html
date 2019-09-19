@@ -3,4 +3,5 @@
         <input type="text" (keyup)="search()" class="form-control">
     </div>
 </div>
+<app-loading class="m-5" *ngIf="loading"></app-loading>
 <app-cards [items]="artists"></app-cards>

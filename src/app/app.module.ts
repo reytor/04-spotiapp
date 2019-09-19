@@ -10,11 +10,16 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistaComponent } from './components/artista/artista.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
+//FontAwesome
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+
 // import routes
 import { ROUTES } from './app.routes';
 import { RouterModule, Routes } from '@angular/router';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { CardsComponent } from './components/cards/cards.component';
+import { LoadingComponent } from './components/shared/loading/loading.component';
 
 // services
 //import { SpotifyService } from './services/spotify.service';
@@ -27,10 +32,12 @@ import { CardsComponent } from './components/cards/cards.component';
     ArtistaComponent,
     NavbarComponent,
     NoimagePipe,
-    CardsComponent
+    CardsComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
+    FontAwesomeModule,
     AppRoutingModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES, { useHash: true})
