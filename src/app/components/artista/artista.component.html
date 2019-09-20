@@ -29,7 +29,11 @@
                     <td><img [src]="track.album.images | noimage" width="80" height="80" alt=""></td>
                     <td>{{track.album.name}}</td>
                     <td>{{track.name}}</td>
-                    <td> <audio [src]="track.preview_url" controls></audio></td>
+                    <!-- <td> <audio [src]="track.preview_url" controls></audio></td> -->
+                    <td>
+                        <iframe [src]="track.uri | domseguro:'https://open.spotify.com/embed?uri='" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media">
+                        </iframe>
+                    </td>
                 </tr>
             </tbody>
         </table>
