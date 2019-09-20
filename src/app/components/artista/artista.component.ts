@@ -7,27 +7,37 @@ import { SpotifyService } from '../../services/spotify.service';
   templateUrl: './artista.component.html',
   styles: []
 })
-export class ArtistaComponent implements OnInit {
+export class ArtistaComponent {
 
   artist: any;
   loading: boolean;
-  
+  topTracks: any;
+
   constructor( private router: Router, private activatedRoute: ActivatedRoute,
                private spotifyService: SpotifyService) {
       this.loading = true;
       this.artist = false;
       this.activatedRoute.params.subscribe( params => {
-        console.log( 'params : ', params);
-        this.spotifyService.getArtist(params['id'])
-             .subscribe(data => {
-               console.log('from getartista: ', data);
-               this.artist = data;
-               this.loading = false;
-             });
+
+        this.getArtist(params.id);
+        this.getTopTracks(params.id);
+
       });
-   }
+    }
 
-  ngOnInit() {
+    getArtist(id) {
+      this.spotifyService.getArtist(id)
+      .subscribe(data => {
+        this.artist = data;
+        this.loading = false;
+      });
+    }
+
+    getTopTracks(id) {
+      this.spotifyService.getTopTracks(id)
+      .subscribe(data => {
+        console.log(data);
+        this.topTracks = data;
+      });
+    }
   }
-
-}
