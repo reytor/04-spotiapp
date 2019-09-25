@@ -4,7 +4,7 @@ import { SpotifyService } from '../../services/spotify.service';
 
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-home' ,
   templateUrl: './home.component.html',
   styles: []
 })
